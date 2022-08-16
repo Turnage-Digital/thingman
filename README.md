@@ -1,2 +1,3 @@
-# boogops-core
-:alien: Core logic for Boogops. :alien:
+# boogops - core
+
+> _It keeps you runnin', yeah it keeps you runnin'_ - The Doobie Brothers
