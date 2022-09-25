@@ -7,11 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Commands" />
-        <Folder Include="Events" />
-        <Folder Include="Repositories" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     </ItemGroup>
-
+    
     <ItemGroup>
         <ProjectReference Include="..\Boogops.Core\Boogops.Core.csproj" />
     </ItemGroup>
