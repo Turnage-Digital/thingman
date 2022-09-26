@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace Boogops.Core.MongoDB;
+namespace Boogops.Core.MongoDb;
 
 public class FindFluentFacade<T> : IFindFluentFacade<T>
 {

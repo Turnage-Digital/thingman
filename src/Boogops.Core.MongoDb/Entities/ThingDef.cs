@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Boogops.Core.MongoDB.Entities;
+namespace Boogops.Core.MongoDb.Entities;
 
 public class ThingDef : Core.Domain.Entities.ThingDef
 {

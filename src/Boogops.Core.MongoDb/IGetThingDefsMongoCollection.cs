@@ -1,4 +1,4 @@
-namespace Boogops.Core.MongoDB;
+namespace Boogops.Core.MongoDb;
 
 public interface IGetThingDefsMongoCollection<TThingDef>
 {

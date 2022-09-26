@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Boogops.Core.MongoDB\Boogops.Core.MongoDB.csproj" />
+      <ProjectReference Include="..\..\src\Boogops.Core.MongoDb\Boogops.Core.MongoDb.csproj" />
     </ItemGroup>
 
 </Project>

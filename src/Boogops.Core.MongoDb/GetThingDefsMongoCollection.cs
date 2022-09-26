@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Boogops.Core.MongoDB;
+namespace Boogops.Core.MongoDb;
 
 internal class GetThingDefsMongoCollection<TThingDef> : IGetThingDefsMongoCollection<TThingDef>
 {
@@ -11,11 +11,12 @@ internal class GetThingDefsMongoCollection<TThingDef> : IGetThingDefsMongoCollec
     private readonly IMongoClient _mongoClient;
 
     public GetThingDefsMongoCollection(
-        IOptions<StoreOptions> options,
+        IOptions<MongoDbOptions> options,
         IGetMongoClient mongoClientGetter
     )
     {
-        _database = options.Value.Database;
+        _database = options.Value.Database ??
+                    throw new ArgumentException("StoreOptions.Database is null");
         _mongoClient = mongoClientGetter.Get();
     }
 

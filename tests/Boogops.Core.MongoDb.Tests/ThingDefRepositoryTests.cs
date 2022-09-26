@@ -1,11 +1,11 @@
-using Boogops.Core.MongoDB.Entities;
-using Boogops.Core.MongoDB.Repositories;
+using Boogops.Core.MongoDb.Entities;
+using Boogops.Core.MongoDb.Repositories;
 using FluentAssertions;
 using MongoDB.Driver;
 using Moq;
 using Xunit;
 
-namespace Boogops.Core.MongoDB.Tests;
+namespace Boogops.Core.MongoDb.Tests;
 
 public class ThingDefRepositoryTests
 {

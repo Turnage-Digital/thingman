@@ -24,9 +24,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.App", "src\Boo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Domain.Shared", "src\Boogops.Core.Domain.Shared\Boogops.Core.Domain.Shared.csproj", "{7F4C3708-E0D8-4446-AC82-8A9FB79BD896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.MongoDB", "src\Boogops.Core.MongoDB\Boogops.Core.MongoDB.csproj", "{E42E74D3-766D-4EA9-BA72-7ED4210360B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.MongoDb", "src\Boogops.Core.MongoDb\Boogops.Core.MongoDb.csproj", "{E42E74D3-766D-4EA9-BA72-7ED4210360B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.MongoDB.Tests", "tests\Boogops.Core.MongoDB.Tests\Boogops.Core.MongoDB.Tests.csproj", "{1774C518-FE08-4583-9BB6-020EBE01D27E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.MongoDb.Tests", "tests\Boogops.Core.MongoDb.Tests\Boogops.Core.MongoDb.Tests.csproj", "{1774C518-FE08-4583-9BB6-020EBE01D27E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
