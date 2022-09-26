@@ -7,11 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+        <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
     </ItemGroup>
-    
+
     <ItemGroup>
-        <ProjectReference Include="..\Boogops.Core\Boogops.Core.csproj" />
+        <ProjectReference Include="..\Boogops.Core.Domain\Boogops.Core.Domain.csproj" />
     </ItemGroup>
 
 </Project>
