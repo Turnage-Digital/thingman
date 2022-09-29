@@ -36,12 +36,12 @@ public class DispatcherTests
 
     private class TestEvent1 : IEvent
     {
-        public Guid? TraceId { get; set; } = Guid.NewGuid();
+        public Guid TraceId { get; set; } = Guid.NewGuid();
     }
 
     private class TestEvent2 : IEvent
     {
-        public Guid? TraceId { get; set; } = Guid.NewGuid();
+        public Guid TraceId { get; set; } = Guid.NewGuid();
     }
 
     private class TestEventHandler : IHandleEvent<TestEvent1>

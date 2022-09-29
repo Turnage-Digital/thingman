@@ -7,7 +7,7 @@ namespace Boogops.Core.MongoDb.Repositories;
 public class ThingDefsRepository<TThingDef> : IThingDefsRepository<TThingDef>
     where TThingDef : ThingDef
 {
-    private readonly IMongoCollectionFacade<TThingDef> _thingDefsMongoCollection;
+    private readonly IMongoCollection<TThingDef> _thingDefsMongoCollection;
 
     public ThingDefsRepository(IGetThingDefsMongoCollection<TThingDef> getThingDefsMongoCollection)
     {

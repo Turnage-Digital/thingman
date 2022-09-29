@@ -1,6 +1,8 @@
+using MongoDB.Driver;
+
 namespace Boogops.Core.MongoDb;
 
 public interface IGetThingDefsMongoCollection<TThingDef>
 {
-    IMongoCollectionFacade<TThingDef> Get();
+    IMongoCollection<TThingDef> Get();
 }
