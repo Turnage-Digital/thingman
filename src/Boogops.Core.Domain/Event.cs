@@ -1,9 +1,9 @@
-using Boogops.Core.Commands;
+using Boogops.Core.Events;
 using Newtonsoft.Json;
 
-namespace Boogops.Core.Domain.Commands;
+namespace Boogops.Core.Domain;
 
-public class Command : ICommand
+public class Event : IEvent
 {
     [JsonProperty("TraceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();

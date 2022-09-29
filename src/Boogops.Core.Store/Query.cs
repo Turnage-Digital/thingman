@@ -1,7 +1,7 @@
 using Boogops.Core.Queries;
 using Newtonsoft.Json;
 
-namespace Boogops.Core.Store.Queries;
+namespace Boogops.Core.Store;
 
 public class Query : IQuery
 {
