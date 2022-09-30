@@ -1,4 +1,4 @@
-namespace Boogops.Core;
+namespace Boogops.Core.Domain;
 
 public interface IDelete<in TAggregateRoot>
     where TAggregateRoot : IAggregateRoot

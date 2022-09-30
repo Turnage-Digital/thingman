@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Boogops.Core.MongoDb;
+namespace Boogops.Core.Domain.MongoDb;
 
 internal class GetThingDefsMongoCollection<TThingDef> : IGetThingDefsMongoCollection<TThingDef>
 {

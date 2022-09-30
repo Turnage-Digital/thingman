@@ -22,13 +22,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Domain", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.App", "src\Boogops.Core.App\Boogops.Core.App.csproj", "{E3EF96A7-2B8D-4784-86BF-BE0638C3AEAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Domain.Shared", "src\Boogops.Core.Domain.Shared\Boogops.Core.Domain.Shared.csproj", "{7F4C3708-E0D8-4446-AC82-8A9FB79BD896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Common", "src\Boogops.Core.Common\Boogops.Core.Common.csproj", "{7F4C3708-E0D8-4446-AC82-8A9FB79BD896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.MongoDb", "src\Boogops.Core.MongoDb\Boogops.Core.MongoDb.csproj", "{E42E74D3-766D-4EA9-BA72-7ED4210360B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Domain.MongoDb", "src\Boogops.Core.Domain.MongoDb\Boogops.Core.Domain.MongoDb.csproj", "{E42E74D3-766D-4EA9-BA72-7ED4210360B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "harness", "harness", "{2655FD69-01FC-4623-8E2F-ABA6B4661061}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Store", "src\Boogops.Core.Store\Boogops.Core.Store.csproj", "{8B2F5F9E-9C18-4CF4-91B7-4A4776F143B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Store.Contracts", "src\Boogops.Core.Store.Contracts\Boogops.Core.Store.Contracts.csproj", "{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,7 @@ Global
 		{7F4C3708-E0D8-4446-AC82-8A9FB79BD896} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{E42E74D3-766D-4EA9-BA72-7ED4210360B3} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{8B2F5F9E-9C18-4CF4-91B7-4A4776F143B3} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
+		{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7648DEB-F76A-4953-B7C4-50638B5FC642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -76,5 +79,9 @@ Global
 		{8B2F5F9E-9C18-4CF4-91B7-4A4776F143B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B2F5F9E-9C18-4CF4-91B7-4A4776F143B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B2F5F9E-9C18-4CF4-91B7-4A4776F143B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

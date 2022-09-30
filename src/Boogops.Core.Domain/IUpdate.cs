@@ -1,4 +1,4 @@
-namespace Boogops.Core;
+namespace Boogops.Core.Domain;
 
 public interface IUpdate<in TAggregateRoot>
 {

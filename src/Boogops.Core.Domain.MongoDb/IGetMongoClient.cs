@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace Boogops.Core.MongoDb;
+namespace Boogops.Core.Domain.MongoDb;
 
 public interface IGetMongoClient
 {

@@ -1,4 +1,4 @@
-namespace Boogops.Core.MongoDb;
+namespace Boogops.Core.Domain.MongoDb;
 
 public class MongoDbOptions
 {

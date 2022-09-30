@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Boogops.Core.Domain.Shared;
+namespace Boogops.Core.Common;
 
 public abstract class Enumeration
 {

@@ -1,8 +1,8 @@
+using Boogops.Core.Domain.MongoDb.Entities;
 using Boogops.Core.Domain.Repositories;
-using Boogops.Core.MongoDb.Entities;
 using MongoDB.Driver;
 
-namespace Boogops.Core.MongoDb.Repositories;
+namespace Boogops.Core.Domain.MongoDb.Repositories;
 
 public class ThingDefsRepository<TThingDef> : IThingDefsRepository<TThingDef>
     where TThingDef : ThingDef
