@@ -34,6 +34,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "impl", "impl", "{646FED50-F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Domain.MongoDb", "src\impl\Boogops.Core.Domain.MongoDb\Boogops.Core.Domain.MongoDb.csproj", "{2D846264-6076-4867-BB99-232B322A8B80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.Store.MongoDb", "src\impl\Boogops.Core.Store.MongoDb\Boogops.Core.Store.MongoDb.csproj", "{60429C82-B4BF-4404-948F-4CB7AFF26E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Core.MongoDb", "src\impl\Boogops.Core.MongoDb\Boogops.Core.MongoDb.csproj", "{69BC5E0F-5D83-4928-A49E-11191C7B1088}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +56,8 @@ Global
 		{AB6FE453-BD12-4BAD-9C2C-77EC0D91A473} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{646FED50-FB88-40F8-A7C6-20C9F6672779} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{2D846264-6076-4867-BB99-232B322A8B80} = {646FED50-FB88-40F8-A7C6-20C9F6672779}
+		{60429C82-B4BF-4404-948F-4CB7AFF26E6C} = {646FED50-FB88-40F8-A7C6-20C9F6672779}
+		{69BC5E0F-5D83-4928-A49E-11191C7B1088} = {646FED50-FB88-40F8-A7C6-20C9F6672779}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7648DEB-F76A-4953-B7C4-50638B5FC642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +92,13 @@ Global
 		{2D846264-6076-4867-BB99-232B322A8B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D846264-6076-4867-BB99-232B322A8B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D846264-6076-4867-BB99-232B322A8B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60429C82-B4BF-4404-948F-4CB7AFF26E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60429C82-B4BF-4404-948F-4CB7AFF26E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60429C82-B4BF-4404-948F-4CB7AFF26E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60429C82-B4BF-4404-948F-4CB7AFF26E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69BC5E0F-5D83-4928-A49E-11191C7B1088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BC5E0F-5D83-4928-A49E-11191C7B1088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BC5E0F-5D83-4928-A49E-11191C7B1088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BC5E0F-5D83-4928-A49E-11191C7B1088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

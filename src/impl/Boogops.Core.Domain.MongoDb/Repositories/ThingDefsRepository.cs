@@ -4,25 +4,26 @@ using MongoDB.Driver;
 
 namespace Boogops.Core.Domain.MongoDb.Repositories;
 
-public class ThingDefsRepository<TThingDef> : IThingDefsRepository<TThingDef>
-    where TThingDef : ThingDef
+public class ThingDefsRepository : IThingDefsRepository<ThingDef>
 {
-    private readonly IMongoCollection<TThingDef> _thingDefsMongoCollection;
+    private const string COLLECTION = "ThingDefs";
 
-    public ThingDefsRepository(IGetThingDefsMongoCollection<TThingDef> getThingDefsMongoCollection)
+    private readonly IMongoCollection<ThingDef> _thingDefsMongoCollection;
+
+    public ThingDefsRepository(IGetMongoCollection getMongoCollection)
     {
-        _thingDefsMongoCollection = getThingDefsMongoCollection.Get();
+        _thingDefsMongoCollection = getMongoCollection.Get<ThingDef>(COLLECTION);
     }
 
-    public async Task<TThingDef?> ReadAsync(string id)
+    public async Task<ThingDef?> ReadAsync(string id)
     {
-        var filter = Builders<TThingDef>.Filter.Eq(x => x.Id, id);
+        var filter = Builders<ThingDef>.Filter.Eq(x => x.Id, id);
         var retval = await _thingDefsMongoCollection.Find(filter)
             .SingleAsync();
         return retval;
     }
 
-    public async Task<CoreResult> CreateAsync(TThingDef entity)
+    public async Task<CoreResult> CreateAsync(ThingDef entity)
     {
         var retval = CoreResult.Success;
 

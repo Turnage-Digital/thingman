@@ -7,12 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Boogops.Core.Store.Contracts\Boogops.Core.Store.Contracts.csproj" />
-        <ProjectReference Include="..\Boogops.Core\Boogops.Core.csproj" />
+        <ProjectReference Include="..\Boogops.Core.Store.Contracts\Boogops.Core.Store.Contracts.csproj"/>
+        <ProjectReference Include="..\Boogops.Core\Boogops.Core.csproj"/>
     </ItemGroup>
 
 </Project>

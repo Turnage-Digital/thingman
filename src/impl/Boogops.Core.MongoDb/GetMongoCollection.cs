@@ -3,24 +3,23 @@ using MongoDB.Driver;
 
 namespace Boogops.Core.Domain.MongoDb;
 
-internal class GetThingDefsMongoCollection<TThingDef> : IGetThingDefsMongoCollection<TThingDef>
+internal class GetMongoCollection : IGetMongoCollection
 {
-    private const string COLLECTION = "ThingDefs";
     private readonly string _database;
 
     private readonly IMongoClient _mongoClient;
 
-    public GetThingDefsMongoCollection(IOptions<MongoDbOptions> options, IGetMongoClient mongoClientGetter)
+    public GetMongoCollection(IOptions<MongoDbOptions> options, IGetMongoClient mongoClientGetter)
     {
         _database = options.Value.Database ??
                     throw new ArgumentException("StoreOptions.Database is null");
         _mongoClient = mongoClientGetter.Get();
     }
 
-    public IMongoCollection<TThingDef> Get()
+    public IMongoCollection<T> Get<T>(string collection)
     {
         var database = _mongoClient.GetDatabase(_database);
-        var retval = database.GetCollection<TThingDef>(COLLECTION);
+        var retval = database.GetCollection<T>(collection);
         return retval;
     }
 }
