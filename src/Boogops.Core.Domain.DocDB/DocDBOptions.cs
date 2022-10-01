@@ -1,6 +1,6 @@
-namespace Boogops.Core.Domain.MongoDb;
+namespace Boogops.Core.Domain.DocDB;
 
-public class MongoDbOptions
+public class DocDBOptions
 {
     public string? ConnectionString { get; set; }
 

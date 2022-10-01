@@ -1,13 +1,13 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Boogops.Core.Domain.MongoDb;
+namespace Boogops.Core.Domain.DocDB;
 
-internal class GetMongoClient : IGetMongoClient
+internal class GetDocDBClient : IGetDocDBClient
 {
     private readonly string _connectionString;
 
-    public GetMongoClient(IOptions<MongoDbOptions> options)
+    public GetDocDBClient(IOptions<DocDBOptions> options)
     {
         _connectionString = options.Value.ConnectionString ??
                             throw new ArgumentException("StoreOptions.ConnectionString is null");

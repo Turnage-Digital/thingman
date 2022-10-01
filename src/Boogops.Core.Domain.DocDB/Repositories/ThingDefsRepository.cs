@@ -1,8 +1,8 @@
-using Boogops.Core.Domain.MongoDb.Entities;
+using Boogops.Core.Domain.DocDB.Entities;
 using Boogops.Core.Domain.Repositories;
 using MongoDB.Driver;
 
-namespace Boogops.Core.Domain.MongoDb.Repositories;
+namespace Boogops.Core.Domain.DocDB.Repositories;
 
 public class ThingDefsRepository : IThingDefsRepository<ThingDef>
 {
@@ -10,9 +10,9 @@ public class ThingDefsRepository : IThingDefsRepository<ThingDef>
 
     private readonly IMongoCollection<ThingDef> _thingDefsMongoCollection;
 
-    public ThingDefsRepository(IGetMongoCollection getMongoCollection)
+    public ThingDefsRepository(IGetDocDBCollection getDocDbCollection)
     {
-        _thingDefsMongoCollection = getMongoCollection.Get<ThingDef>(COLLECTION);
+        _thingDefsMongoCollection = getDocDbCollection.Get<ThingDef>(COLLECTION);
     }
 
     public async Task<ThingDef?> ReadAsync(string id)

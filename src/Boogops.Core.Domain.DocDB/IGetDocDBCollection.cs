@@ -1,8 +1,8 @@
 using MongoDB.Driver;
 
-namespace Boogops.Core.Domain.MongoDb;
+namespace Boogops.Core.Domain.DocDB;
 
-public interface IGetMongoCollection
+public interface IGetDocDBCollection
 {
     IMongoCollection<T> Get<T>(string collection);
 }

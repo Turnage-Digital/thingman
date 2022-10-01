@@ -8,7 +8,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Boogops.Core.Store\Boogops.Core.Store.csproj"/>
-        <ProjectReference Include="..\Boogops.Core.MongoDb\Boogops.Core.MongoDb.csproj"/>
     </ItemGroup>
 
 </Project>

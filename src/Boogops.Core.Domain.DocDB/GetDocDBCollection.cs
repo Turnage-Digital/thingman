@@ -1,19 +1,19 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Boogops.Core.Domain.MongoDb;
+namespace Boogops.Core.Domain.DocDB;
 
-internal class GetMongoCollection : IGetMongoCollection
+internal class GetDocDBCollection : IGetDocDBCollection
 {
     private readonly string _database;
 
     private readonly IMongoClient _mongoClient;
 
-    public GetMongoCollection(IOptions<MongoDbOptions> options, IGetMongoClient mongoClientGetter)
+    public GetDocDBCollection(IOptions<DocDBOptions> options, IGetDocDBClient docDbClientGetter)
     {
         _database = options.Value.Database ??
                     throw new ArgumentException("StoreOptions.Database is null");
-        _mongoClient = mongoClientGetter.Get();
+        _mongoClient = docDbClientGetter.Get();
     }
 
     public IMongoCollection<T> Get<T>(string collection)
