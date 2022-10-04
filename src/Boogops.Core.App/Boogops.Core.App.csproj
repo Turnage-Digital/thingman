@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Boogops.Core.Domain\Boogops.Core.Domain.csproj" />
+      <ProjectReference Include="..\Boogops.Core.Store\Boogops.Core.Store.csproj" />
+    </ItemGroup>
+
 </Project>
