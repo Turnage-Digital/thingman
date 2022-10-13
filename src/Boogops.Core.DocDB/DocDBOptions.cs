@@ -1,4 +1,4 @@
-namespace Boogops.Core.Domain.DocDB;
+namespace Boogops.Core.DocDB;
 
 public class DocDBOptions
 {

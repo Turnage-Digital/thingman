@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Boogops.Core.App\Boogops.Core.App.csproj" />
+        <ProjectReference Include="..\..\src\Boogops.Core.App\Boogops.Core.App.csproj"/>
     </ItemGroup>
 
 </Project>

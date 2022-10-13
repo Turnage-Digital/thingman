@@ -7,6 +7,7 @@ public interface IAwaitQuery
 }
 
 public interface IAwaitQuery<in TQuery, TResult> : IAwaitQuery
+    where TQuery : IQuery
 {
     Task<QueryResult<TResult>> AwaitAsync(TQuery query);
 }

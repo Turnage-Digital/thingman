@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace Boogops.Core.Domain.DocDB;
+namespace Boogops.Core.DocDB;
 
 public interface IGetDocDBCollection
 {

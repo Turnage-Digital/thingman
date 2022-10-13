@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Boogops.Core.Domain.DocDB;
+namespace Boogops.Core.DocDB;
 
 internal class GetDocDBClient : IGetDocDBClient
 {
