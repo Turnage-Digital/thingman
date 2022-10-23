@@ -1,9 +1,9 @@
 using Boogops.Core.Queries;
 using Newtonsoft.Json;
 
-namespace Boogops.Core.Store;
+namespace Boogops.Core.Stores;
 
-public class Query : IQuery
+public abstract class Query : IQuery
 {
     [JsonProperty("TraceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();

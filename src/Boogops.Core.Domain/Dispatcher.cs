@@ -32,12 +32,12 @@ public static class Dispatcher
 
             if (coreErrors.Any())
             {
-                retval = CoreResult.Failed(coreErrors.ToArray());
+                retval = CoreResultFactory.CreateFailedResult(coreErrors.ToArray());
             }
         }
         catch (Exception e)
         {
-            retval = CoreResult.Failed(new CoreError { Message = e.Message });
+            retval = CoreResultFactory.CreateFailedResult(new CoreError { Message = e.Message });
         }
 
         return retval;

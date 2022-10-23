@@ -1,6 +1,6 @@
-using Boogops.Core.Store.Contracts.Dtos;
+using Boogops.Core.Stores.Dtos;
 
-namespace Boogops.Core.Store.Stores;
+namespace Boogops.Core.Stores.Stores;
 
 public interface IThingDefsStore
 {

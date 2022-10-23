@@ -1,4 +1,4 @@
-namespace Boogops.Core.Store.Queries;
+namespace Boogops.Core.Stores.Queries;
 
 public class GetThingDefByIdQuery : Query
 {

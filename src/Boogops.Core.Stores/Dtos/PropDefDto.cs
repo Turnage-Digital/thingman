@@ -1,3 +1,3 @@
-namespace Boogops.Core.Store.Contracts.Dtos;
+namespace Boogops.Core.Stores.Dtos;
 
 public record PropDefDto(string Name, string PropType);

@@ -31,10 +31,12 @@ public class ThingDefsRepository : IThingDefsRepository<ThingDef>
         try
         {
             await _thingDefsMongoCollection.InsertOneAsync(entity);
+            await entity.DispatchEventsAsync();
         }
         catch (Exception e)
         {
-            retval = CoreResult.Failed(new CoreError { Message = e.Message });
+            retval = CoreResultFactory.CreateFailedResult(
+                new CoreError { Message = e.Message });
         }
 
         return retval;
