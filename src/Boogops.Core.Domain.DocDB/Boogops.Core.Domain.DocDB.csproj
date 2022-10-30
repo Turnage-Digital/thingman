@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Boogops.Core.DocDB\Boogops.Core.DocDB.csproj"/>
-        <ProjectReference Include="..\Boogops.Core.Domain\Boogops.Core.Domain.csproj"/>
+        <ProjectReference Include="..\Boogops.Core.DocDB\Boogops.Core.DocDB.csproj" />
+        <ProjectReference Include="..\Boogops.Core.Domain\Boogops.Core.Domain.csproj" />
     </ItemGroup>
 
 </Project>

@@ -26,7 +26,8 @@ public class GetThingDefByIdQueryAwaiter : IAwaitGetThingDefByIdQuery
         }
         catch (Exception e)
         {
-            retval = QueryResultFactory.CreateFailedResult<ThingDefDto>(new CoreError { Message = e.Message });
+            retval = QueryResultFactory.CreateFailedResult<ThingDefDto>(
+                new CoreError { Message = e.Message });
         }
 
         return retval;

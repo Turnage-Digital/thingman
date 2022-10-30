@@ -8,6 +8,8 @@ public abstract class Entity
 
     public IEnumerable<IEvent>? Events => _events?.AsReadOnly();
 
+    public string? Id { get; protected set; } = null;
+    
     public void AddEvent(IEvent eventItem)
     {
         _events ??= new List<IEvent>();
@@ -19,12 +21,20 @@ public abstract class Entity
         _events?.Remove(eventItem);
     }
 
-    public async Task DispatchEventsAsync()
+    public void ClearEvents()
     {
-        var events = Events?.ToList();
+        _events?.Clear();
+    }
+}
+
+public static class EntityExtensions
+{
+    public static async Task DispatchEventsAsync(this Entity entity)
+    {
+        var events = entity.Events?.ToList();
         if (events is not null)
         {
-            _events?.Clear();
+            entity.ClearEvents();
             foreach (var @event in events)
             {
                 var result = await Dispatcher.RaiseAsync(@event);

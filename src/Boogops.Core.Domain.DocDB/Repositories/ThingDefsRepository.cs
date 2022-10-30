@@ -1,5 +1,5 @@
 using Boogops.Core.DocDB;
-using Boogops.Core.Domain.DocDB.Entities;
+using Boogops.Core.Domain.Entities;
 using Boogops.Core.Domain.Repositories;
 using MongoDB.Driver;
 
