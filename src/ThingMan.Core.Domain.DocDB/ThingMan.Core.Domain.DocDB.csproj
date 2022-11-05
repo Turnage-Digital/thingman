@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ThingMan.Core.DocDB\ThingMan.Core.DocDB.csproj" />
-        <ProjectReference Include="..\ThingMan.Core.Domain\ThingMan.Core.Domain.csproj" />
+        <ProjectReference Include="..\ThingMan.Core.DocDB\ThingMan.Core.DocDB.csproj"/>
+        <ProjectReference Include="..\ThingMan.Core.Domain\ThingMan.Core.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -1,3 +1,3 @@
-namespace ThingMan.Core.Stores.Dtos;
+namespace ThingMan.Core.Domain.Dtos;
 
 public record ThingDefDto(string Id, string Name, PropDefDto[] Props);

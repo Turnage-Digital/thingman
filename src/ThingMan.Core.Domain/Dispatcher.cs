@@ -15,12 +15,12 @@ public static class Dispatcher
     public static async Task<CoreResult> RaiseAsync<T>(T @event)
         where T : IEvent
     {
+        var retval = CoreResult.Success;
+
         if (_handlers == null)
         {
-            return CoreResult.Success;
+            return retval;
         }
-
-        var retval = CoreResult.Success;
 
         try
         {

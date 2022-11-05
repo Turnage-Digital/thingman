@@ -1,8 +1,7 @@
-using ThingMan.Core.Domain.Commands;
 using ThingMan.Core.Domain.Entities;
 using ThingMan.Core.Domain.Repositories;
 
-namespace ThingMan.Core.App.Commands;
+namespace ThingMan.Core.Domain.Commands.Handlers;
 
 public class CreateThingDefCommandHandler : IHandleCreateThingDefCommand
 {

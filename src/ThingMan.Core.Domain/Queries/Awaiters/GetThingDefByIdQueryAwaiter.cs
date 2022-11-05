@@ -1,16 +1,15 @@
-using ThingMan.Core.Stores.Dtos;
-using ThingMan.Core.Stores.Queries;
-using ThingMan.Core.Stores.Stores;
+using ThingMan.Core.Domain.Dtos;
+using ThingMan.Core.Domain.Views;
 
-namespace ThingMan.Core.App.Queries;
+namespace ThingMan.Core.Domain.Queries.Awaiters;
 
 public class GetThingDefByIdQueryAwaiter : IAwaitGetThingDefByIdQuery
 {
-    private readonly IThingDefsStore _thingDefsStore;
+    private readonly IThingDefsView _thingDefsView;
 
-    public GetThingDefByIdQueryAwaiter(IThingDefsStore thingDefsStore)
+    public GetThingDefByIdQueryAwaiter(IThingDefsView thingDefsView)
     {
-        _thingDefsStore = thingDefsStore;
+        _thingDefsView = thingDefsView;
     }
 
     public string Name => nameof(GetThingDefByIdQueryAwaiter);
@@ -21,7 +20,7 @@ public class GetThingDefByIdQueryAwaiter : IAwaitGetThingDefByIdQuery
 
         try
         {
-            var results = await _thingDefsStore.GetById(query.Id);
+            var results = await _thingDefsView.GetById(query.Id);
             retval = QueryResultFactory.CreateSuccessfulResult(results);
         }
         catch (Exception e)

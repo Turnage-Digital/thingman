@@ -1,9 +1,9 @@
-using ThingMan.Core.Commands;
 using Newtonsoft.Json;
+using ThingMan.Core.Commands;
 
 namespace ThingMan.Core.Domain;
 
-public class Command : ICommand
+public abstract class Command : ICommand
 {
     [JsonProperty("TraceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();

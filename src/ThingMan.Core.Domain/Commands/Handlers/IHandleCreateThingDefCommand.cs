@@ -1,7 +1,6 @@
 using ThingMan.Core.Commands;
-using ThingMan.Core.Domain.Commands;
 
-namespace ThingMan.Core.App.Commands;
+namespace ThingMan.Core.Domain.Commands.Handlers;
 
 public interface IHandleCreateThingDefCommand :
     IHandleCommand<CreateThingDefCommand> { }

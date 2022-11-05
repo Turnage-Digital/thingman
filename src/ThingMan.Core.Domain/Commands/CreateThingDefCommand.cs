@@ -9,7 +9,7 @@ public class CreateThingDefCommand : Command
         Name = name;
         Props = props;
     }
-    
+
     public string Name { get; }
 
     public PropDef[] Props { get; }

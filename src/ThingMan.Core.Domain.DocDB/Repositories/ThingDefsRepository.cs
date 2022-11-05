@@ -1,7 +1,7 @@
+using MongoDB.Driver;
 using ThingMan.Core.DocDB;
 using ThingMan.Core.Domain.Entities;
 using ThingMan.Core.Domain.Repositories;
-using MongoDB.Driver;
 
 namespace ThingMan.Core.Domain.DocDB.Repositories;
 

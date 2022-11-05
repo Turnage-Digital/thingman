@@ -1,4 +1,4 @@
-namespace ThingMan.Core.Stores.Queries;
+namespace ThingMan.Core.Domain.Queries;
 
 public class GetThingDefByIdQuery : Query
 {

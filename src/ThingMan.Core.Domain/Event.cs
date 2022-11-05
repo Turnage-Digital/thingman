@@ -1,9 +1,9 @@
-using ThingMan.Core.Events;
 using Newtonsoft.Json;
+using ThingMan.Core.Events;
 
 namespace ThingMan.Core.Domain;
 
-public class Event : IEvent
+public abstract class Event : IEvent
 {
     [JsonProperty("TraceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();

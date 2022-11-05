@@ -7,11 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="AutoMapper" Version="12.0.0"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ThingMan.Core\ThingMan.Core.csproj" />
+        <ProjectReference Include="..\ThingMan.Core\ThingMan.Core.csproj"/>
     </ItemGroup>
 
 </Project>

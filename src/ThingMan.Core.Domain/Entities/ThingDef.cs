@@ -4,11 +4,9 @@ namespace ThingMan.Core.Domain.Entities;
 
 public class ThingDef : Entity, IAggregateRoot
 {
-    protected ThingDef() { }
+    public string Name { get; set; } = null!;
 
-    public string Name { get; protected set; } = null!;
-
-    public IList<PropDef> Props { get; protected set; } = null!;
+    public IList<PropDef> Props { get; set; } = null!;
 
     public static ThingDef Create(string name, IEnumerable<PropDef> props)
     {

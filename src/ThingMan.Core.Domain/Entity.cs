@@ -8,8 +8,8 @@ public abstract class Entity
 
     public IEnumerable<IEvent>? Events => _events?.AsReadOnly();
 
-    public string? Id { get; protected set; } = null;
-    
+    public string? Id { get; set; } = null;
+
     public void AddEvent(IEvent eventItem)
     {
         _events ??= new List<IEvent>();

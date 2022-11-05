@@ -1,7 +1,7 @@
-using ThingMan.Core.Queries;
 using Newtonsoft.Json;
+using ThingMan.Core.Queries;
 
-namespace ThingMan.Core.Stores;
+namespace ThingMan.Core.Domain;
 
 public abstract class Query : IQuery
 {
