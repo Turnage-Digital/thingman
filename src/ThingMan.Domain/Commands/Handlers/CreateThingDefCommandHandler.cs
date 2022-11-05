@@ -21,7 +21,7 @@ public class CreateThingDefCommandHandler : IHandleCreateThingDefCommand
 
         try
         {
-            var thingDef = ThingDef.Create(command.Name, command.Props);
+            var thingDef = ThingDef.Create(command.UserId, command.Name, command.Props);
             await _thingDefsRepository.CreateAsync(thingDef);
         }
         catch (Exception e)
