@@ -10,5 +10,4 @@ dist
 node_modules
 keys
 
-global.json
 *.user
