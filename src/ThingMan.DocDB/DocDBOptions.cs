@@ -6,5 +6,5 @@ public class DocDBOptions
 
     public string? Key { get; set; }
     
-    public string? Database { get; set; }
+    public string? DatabaseName { get; set; }
 }

@@ -4,5 +4,5 @@ namespace ThingMan.DocDB;
 
 public interface IGetDatabase
 {
-    Database Get();
+    Task<Database> GetAsync();
 }

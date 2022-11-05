@@ -13,7 +13,7 @@ public class GetThingDefsContainer : IGetThingDefsContainer
 
     public async Task<Container> GetAsync()
     {
-        var database = _getDatabase.Get();
+        var database = await _getDatabase.GetAsync();
         var retval = await database
             .CreateContainerIfNotExistsAsync("ThingDefs", "/UserId");
         return retval;

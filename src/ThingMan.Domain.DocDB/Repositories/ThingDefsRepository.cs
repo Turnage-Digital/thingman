@@ -8,38 +8,37 @@ namespace ThingMan.Domain.DocDB.Repositories;
 
 public class ThingDefsRepository : IThingDefsRepository<ThingDef>
 {
-    private readonly Container _thingDefsContainer;
+    private readonly IGetThingDefsContainer _thingDefsContainerGetter;
 
     public ThingDefsRepository(IGetThingDefsContainer thingDefsContainerGetter)
     {
-        _thingDefsContainer = thingDefsContainerGetter.GetAsync().Result;
+        _thingDefsContainerGetter = thingDefsContainerGetter;
     }
 
-    public Task<ThingDef?> ReadAsync(string id)
+    public async Task<ThingDef?> ReadAsync(string id)
     {
-        throw new NotImplementedException();
-        // var filter = Builders<ThingDef>.Filter.Eq(x => x.Id, id);
-        // var retval = await _thingDefsMongoCollection.Find(filter)
-        //     .SingleAsync();
-        // return retval;
+        var thingDefsContainer = await _thingDefsContainerGetter.GetAsync();
+        var itemResponse = await thingDefsContainer.ReadItemAsync<ThingDef>(id, new PartitionKey(id));
+        var retval = itemResponse.Resource;
+        return retval;
     }
 
-    public Task<CoreResult> CreateAsync(ThingDef entity)
+    public async Task<CoreResult> CreateAsync(ThingDef entity)
     {
-        throw new NotImplementedException();
-        // var retval = CoreResult.Success;
-        //
-        // try
-        // {
-        //     await _thingDefsMongoCollection.InsertOneAsync(entity);
-        //     await entity.DispatchEventsAsync();
-        // }
-        // catch (Exception e)
-        // {
-        //     retval = CoreResultFactory.CreateFailedResult(
-        //         new CoreError { Message = e.Message });
-        // }
-        //
-        // return retval;
+        var retval = CoreResult.Success;
+
+        try
+        {
+            var thingDefsContainer = await _thingDefsContainerGetter.GetAsync();
+            await thingDefsContainer.CreateItemAsync(entity, new PartitionKey(entity.Id));
+            await entity.DispatchEventsAsync();
+        }
+        catch (Exception e)
+        {
+            retval = CoreResultFactory.CreateFailedResult(
+                new CoreError { Message = e.Message });
+        }
+
+        return retval;
     }
 }

@@ -5,15 +5,19 @@ namespace ThingMan.DocDB;
 
 internal class GetDatabase : IGetDatabase
 {
-    private readonly Database _database;
+    private readonly CosmosClient _client;
+    private readonly string? _databaseName;
 
     public GetDatabase(IOptions<DocDBOptions> options)
     {
-        var client = new CosmosClient(options.Value.Account, options.Value.Key);
-        var response = client.CreateDatabaseIfNotExistsAsync(options.Value.Database).Result;
-        
-        _database = response.Database;
+        _client = new CosmosClient(options.Value.Account, options.Value.Key);
+        _databaseName = options.Value.DatabaseName;
     }
 
-    public Database Get() => _database;
+    public async Task<Database> GetAsync()
+    {
+        var databaseResponse = await _client.CreateDatabaseIfNotExistsAsync(_databaseName);
+        var retval = databaseResponse.Database;
+        return retval;
+    }
 }
