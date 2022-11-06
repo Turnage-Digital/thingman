@@ -2,7 +2,13 @@
   "private": true,
   "name": "thingman",
   "workspaces": [
-    "src/ThingMan",
     "src/ThingMan/ClientApp"
-  ]
+  ],
+  "scripts": {
+    "tailwind-watch": "npx tailwindcss -i ./src/ThingMan/ClientApp/src/index.css -o ./src/ThingMan/wwwroot/dist/index.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "tailwindcss": "^3.2.1"
+  }
 }

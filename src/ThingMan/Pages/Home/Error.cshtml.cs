@@ -7,5 +7,5 @@ namespace ThingMan.Pages.Home;
 [AllowAnonymous]
 public class Error : PageModel
 {
-    public async Task OnGet(string? errorId = null) { }
+    public void OnGet(string? errorId = null) { }
 }

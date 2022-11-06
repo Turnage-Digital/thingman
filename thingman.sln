@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{E8
 		LICENSE = LICENSE
 		global.json = global.json
 		package.json = package.json
+		tailwind.config.js = tailwind.config.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{87367327-598A-4DD4-AFB6-C38BAB89D039}"
