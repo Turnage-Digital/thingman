@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "thingman",
+  "workspaces": [
+    "src/ThingMan",
+    "src/ThingMan/ClientApp"
+  ]
+}
