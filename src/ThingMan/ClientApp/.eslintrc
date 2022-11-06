@@ -1,0 +1,12 @@
+{
+  "ignorePatterns": [
+    "node_modules/",
+    "*.js"
+  ],
+  "extends": [
+    "plugin:@shopify/typescript",
+    "plugin:@shopify/react",
+    "plugin:@shopify/prettier",
+    "plugin:tailwindcss/recommended"
+  ]
+}
