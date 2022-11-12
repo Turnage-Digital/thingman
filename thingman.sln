@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{E8
 		README.md = README.md
 		.gitignore = .gitignore
 		LICENSE = LICENSE
-		global.json = global.json
 		package.json = package.json
 		tailwind.config.js = tailwind.config.js
 	EndProjectSection
@@ -23,11 +22,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain.Tests", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain", "src\ThingMan.Domain\ThingMan.Domain.csproj", "{0D1095FA-8EDC-481C-970D-5B3AF2D5F16A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain.DocDB", "src\ThingMan.Domain.DocDB\ThingMan.Domain.DocDB.csproj", "{A3327E2B-AD83-433F-B6AC-561BB3DF81D8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.DocDB", "src\ThingMan.DocDB\ThingMan.DocDB.csproj", "{D4FB121F-E0F8-40FD-A127-867D81230D9C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan", "src\ThingMan\ThingMan.csproj", "{43FF2275-14B4-4187-A513-3B5AD8646DC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain.EntityFrameworkCore", "src\ThingMan.Domain.EntityFrameworkCore\ThingMan.Domain.EntityFrameworkCore.csproj", "{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,9 +38,8 @@ Global
 		{F7648DEB-F76A-4953-B7C4-50638B5FC642} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{011963D1-6B27-4FFC-A43F-E0A16A99B54E} = {87ACCC8C-9806-4D0B-BAF5-0231D11BECCE}
 		{0D1095FA-8EDC-481C-970D-5B3AF2D5F16A} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
-		{A3327E2B-AD83-433F-B6AC-561BB3DF81D8} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
-		{D4FB121F-E0F8-40FD-A127-867D81230D9C} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{43FF2275-14B4-4187-A513-3B5AD8646DC8} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
+		{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7648DEB-F76A-4953-B7C4-50638B5FC642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,17 +54,13 @@ Global
 		{0D1095FA-8EDC-481C-970D-5B3AF2D5F16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D1095FA-8EDC-481C-970D-5B3AF2D5F16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D1095FA-8EDC-481C-970D-5B3AF2D5F16A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3327E2B-AD83-433F-B6AC-561BB3DF81D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3327E2B-AD83-433F-B6AC-561BB3DF81D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3327E2B-AD83-433F-B6AC-561BB3DF81D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3327E2B-AD83-433F-B6AC-561BB3DF81D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4FB121F-E0F8-40FD-A127-867D81230D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4FB121F-E0F8-40FD-A127-867D81230D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4FB121F-E0F8-40FD-A127-867D81230D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4FB121F-E0F8-40FD-A127-867D81230D9C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43FF2275-14B4-4187-A513-3B5AD8646DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43FF2275-14B4-4187-A513-3B5AD8646DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43FF2275-14B4-4187-A513-3B5AD8646DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43FF2275-14B4-4187-A513-3B5AD8646DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
