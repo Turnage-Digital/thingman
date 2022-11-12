@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using ThingMan.Core.Events;
 
 namespace ThingMan.Core;
@@ -6,6 +7,7 @@ public abstract class Entity
 {
     private List<IEvent>? _events;
 
+    [NotMapped]
     public IEnumerable<IEvent>? Events => _events?.AsReadOnly();
 
     public string? Id { get; set; } = null;
