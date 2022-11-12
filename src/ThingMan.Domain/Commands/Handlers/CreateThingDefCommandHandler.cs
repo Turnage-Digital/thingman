@@ -26,7 +26,7 @@ public class CreateThingDefCommandHandler : IHandleCreateThingDefCommand
         }
         catch (Exception e)
         {
-            retval = CoreResultFactory.CreateFailedResult(
+            retval = CoreResult.CreateFailedResult(
                 new CoreError { Message = e.Message });
         }
 

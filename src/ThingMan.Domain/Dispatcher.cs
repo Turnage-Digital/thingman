@@ -33,12 +33,12 @@ public static class Dispatcher
 
             if (coreErrors.Any())
             {
-                retval = CoreResultFactory.CreateFailedResult(coreErrors.ToArray());
+                retval = CoreResult.CreateFailedResult(coreErrors.ToArray());
             }
         }
         catch (Exception e)
         {
-            retval = CoreResultFactory.CreateFailedResult(new CoreError { Message = e.Message });
+            retval = CoreResult.CreateFailedResult(new CoreError { Message = e.Message });
         }
 
         return retval;

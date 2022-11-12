@@ -22,11 +22,11 @@ public class GetThingDefByIdQueryAwaiter : IAwaitGetThingDefByIdQuery
         try
         {
             var results = await _thingDefsView.GetById(query.Id);
-            retval = QueryResultFactory.CreateSuccessfulResult(results);
+            retval = QueryResult.CreateSuccessfulResult(results);
         }
         catch (Exception e)
         {
-            retval = QueryResultFactory.CreateFailedResult<ThingDefDto>(
+            retval = QueryResult.CreateFailedResult<ThingDefDto>(
                 new CoreError { Message = e.Message });
         }
 

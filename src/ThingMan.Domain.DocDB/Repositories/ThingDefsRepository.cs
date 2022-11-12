@@ -2,6 +2,7 @@ using Microsoft.Azure.Cosmos;
 using ThingMan.Core;
 using ThingMan.DocDB;
 using ThingMan.Domain.Entities;
+using ThingMan.Domain.Extensions;
 using ThingMan.Domain.Repositories;
 
 namespace ThingMan.Domain.DocDB.Repositories;
@@ -35,7 +36,7 @@ public class ThingDefsRepository : IThingDefsRepository<ThingDef>
         }
         catch (Exception e)
         {
-            retval = CoreResultFactory.CreateFailedResult(
+            retval = CoreResult.CreateFailedResult(
                 new CoreError { Message = e.Message });
         }
 
