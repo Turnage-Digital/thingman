@@ -11,3 +11,5 @@ node_modules
 keys
 
 *.user
+
+thing-man.db*

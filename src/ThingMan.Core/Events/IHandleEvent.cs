@@ -8,5 +8,5 @@ public interface IHandleEvent
 public interface IHandleEvent<in T> : IHandleEvent
     where T : IEvent
 {
-    Task<CoreResult> HandleAsync(T @event);
+    Task<CoreResponse> HandleAsync(T @event);
 }

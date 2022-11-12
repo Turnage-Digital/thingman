@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using ThingMan.Core;
-using ThingMan.Domain;
 using ThingMan.Domain.Entities;
 
 namespace ThingMan.Domain.SqlDB;
@@ -48,7 +47,4 @@ public class ThingManDbContext : DbContext
             }
         }
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite("thing-man.db");
 }

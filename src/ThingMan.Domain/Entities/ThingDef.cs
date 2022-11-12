@@ -8,7 +8,7 @@ public class ThingDef : Entity, IAggregateRoot
     public string Name { get; set; } = null!;
 
     public string UserId { get; set; } = null!;
-    
+
     public IList<PropDef> Props { get; set; } = null!;
 
     public static ThingDef Create(string name, string userId, IEnumerable<PropDef> props)

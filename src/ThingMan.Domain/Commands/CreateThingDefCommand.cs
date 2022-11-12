@@ -13,7 +13,7 @@ public class CreateThingDefCommand : Command
     }
 
     public string UserId { get; }
-    
+
     public string Name { get; }
 
     public PropDef[] Props { get; }

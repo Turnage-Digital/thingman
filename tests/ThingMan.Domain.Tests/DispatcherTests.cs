@@ -49,10 +49,10 @@ public class DispatcherTests
     {
         public bool IsHandled { get; private set; }
 
-        public Task<CoreResult> HandleAsync(TestEvent1 @event)
+        public Task<CoreResponse> HandleAsync(TestEvent1 @event)
         {
             IsHandled = true;
-            return Task.FromResult(CoreResult.Success);
+            return Task.FromResult(CoreResponse.Success);
         }
 
         public string Name => "TestEventHandler";

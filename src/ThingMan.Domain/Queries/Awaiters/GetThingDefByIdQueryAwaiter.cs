@@ -15,18 +15,18 @@ public class GetThingDefByIdQueryAwaiter : IAwaitGetThingDefByIdQuery
 
     public string Name => nameof(GetThingDefByIdQueryAwaiter);
 
-    public async Task<QueryResult<ThingDefDto>> AwaitAsync(GetThingDefByIdQuery query)
+    public async Task<CoreResponse<ThingDefDto>> AwaitAsync(GetThingDefByIdQuery query)
     {
-        QueryResult<ThingDefDto> retval;
+        CoreResponse<ThingDefDto> retval;
 
         try
         {
-            var results = await _thingDefsView.GetById(query.Id);
-            retval = QueryResult.CreateSuccessfulResult(results);
+            var result = await _thingDefsView.GetById(query.Id);
+            retval = CoreResponse<ThingDefDto>.CreateSuccessfulResponseWithResult(result);
         }
         catch (Exception e)
         {
-            retval = QueryResult.CreateFailedResult<ThingDefDto>(
+            retval = CoreResponse<ThingDefDto>.CreateFailedResponse(
                 new CoreError { Message = e.Message });
         }
 

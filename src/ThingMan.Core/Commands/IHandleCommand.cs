@@ -8,5 +8,11 @@ public interface IHandleCommand
 public interface IHandleCommand<in T> : IHandleCommand
     where T : ICommand
 {
-    Task<CoreResult> HandleAsync(T command);
+    Task<CoreResponse> HandleAsync(T command);
+}
+
+public interface IHandleCommand<in T, TResult> : IHandleCommand
+    where T : ICommand
+{
+    Task<CoreResponse<TResult>> HandleAsync(T command);
 }

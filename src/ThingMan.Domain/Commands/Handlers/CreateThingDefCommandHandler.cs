@@ -15,9 +15,9 @@ public class CreateThingDefCommandHandler : IHandleCreateThingDefCommand
 
     public string Name => nameof(CreateThingDefCommandHandler);
 
-    public async Task<CoreResult> HandleAsync(CreateThingDefCommand command)
+    public async Task<CoreResponse> HandleAsync(CreateThingDefCommand command)
     {
-        var retval = CoreResult.Success;
+        var retval = CoreResponse.Success;
 
         try
         {
@@ -26,8 +26,7 @@ public class CreateThingDefCommandHandler : IHandleCreateThingDefCommand
         }
         catch (Exception e)
         {
-            retval = CoreResult.CreateFailedResult(
-                new CoreError { Message = e.Message });
+            retval = CoreResponse.CreateFailedResponse(new CoreError { Message = e.Message });
         }
 
         return retval;

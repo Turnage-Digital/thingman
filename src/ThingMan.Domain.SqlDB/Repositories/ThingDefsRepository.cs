@@ -12,7 +12,7 @@ public class ThingDefsRepository : IThingDefsRepository
     {
         _dbContext = dbContext;
     }
-    
+
     public async Task<ThingDef?> ReadAsync(string id)
     {
         var retval = await _dbContext.ThingDefs
