@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using ThingMan.Domain.SqlDB;
 
 namespace ThingMan;
 
@@ -9,14 +10,21 @@ internal static class HostingExtensions
 {
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
-        var connectionString = builder.Configuration.GetConnectionString("Default");
+        const string databaseName = "thing-man.db";
+        var migrationAssemblyName = typeof(ThingManDbContext).Assembly.FullName;
+        
         builder.Services
-            .AddDbContext<IdentityDbContext<IdentityUser>>(options =>
-                options.UseCosmos(connectionString, "ThingMan"));
+            .AddDbContext<ThingManDbContext>(options =>
+                options.UseSqlite(databaseName,
+                    optionsBuilder => optionsBuilder.MigrationsAssembly(migrationAssemblyName)));
+
+        builder.Services
+            .AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlite(databaseName));
 
         builder.Services
             .AddDefaultIdentity<IdentityUser>()
-            .AddEntityFrameworkStores<IdentityDbContext<IdentityUser>>();
+            .AddEntityFrameworkStores<ApplicationDbContext>();
 
         return builder.Build();
     }

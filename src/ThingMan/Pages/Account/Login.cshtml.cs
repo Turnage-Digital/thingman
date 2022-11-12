@@ -39,7 +39,8 @@ public class Login : PageModel
             return Page();
         }
 
-        var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password,
+        // using that null suppressor because the model state is valid
+        var result = await _signInManager.PasswordSignInAsync(Input.Email!, Input.Password!,
             true, lockoutOnFailure: false);
         if (result.Succeeded)
         {

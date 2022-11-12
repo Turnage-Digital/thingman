@@ -1,6 +1,4 @@
-using ThingMan.Core;
-
-namespace ThingMan.Domain;
+namespace ThingMan.Core;
 
 public interface IRead<TAggregateRoot>
     where TAggregateRoot : IAggregateRoot

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace ThingMan.Domain;
+namespace ThingMan.Core;
 
 public abstract class Enumeration
 {

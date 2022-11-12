@@ -6,9 +6,9 @@ namespace ThingMan.Domain.Commands.Handlers;
 
 public class CreateThingDefCommandHandler : IHandleCreateThingDefCommand
 {
-    private readonly IThingDefsRepository<ThingDef> _thingDefsRepository;
+    private readonly IThingDefsRepository _thingDefsRepository;
 
-    public CreateThingDefCommandHandler(IThingDefsRepository<ThingDef> thingDefsRepository)
+    public CreateThingDefCommandHandler(IThingDefsRepository thingDefsRepository)
     {
         _thingDefsRepository = thingDefsRepository;
     }

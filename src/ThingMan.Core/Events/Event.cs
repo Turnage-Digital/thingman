@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
-using ThingMan.Core.Events;
 
-namespace ThingMan.Domain;
+namespace ThingMan.Core.Events;
 
 public abstract class Event : IEvent
 {

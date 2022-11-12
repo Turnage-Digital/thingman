@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
-using ThingMan.Core.Commands;
 
-namespace ThingMan.Domain;
+namespace ThingMan.Core.Commands;
 
 public abstract class Command : ICommand
 {

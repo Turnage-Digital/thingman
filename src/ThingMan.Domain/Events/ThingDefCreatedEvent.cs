@@ -1,3 +1,4 @@
+using ThingMan.Core.Events;
 using ThingMan.Domain.Entities;
 
 namespace ThingMan.Domain.Events;

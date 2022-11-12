@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain", "src\Thin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan", "src\ThingMan\ThingMan.csproj", "{43FF2275-14B4-4187-A513-3B5AD8646DC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain.EntityFrameworkCore", "src\ThingMan.Domain.EntityFrameworkCore\ThingMan.Domain.EntityFrameworkCore.csproj", "{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain.SqlDB", "src\ThingMan.Domain.SqlDB\ThingMan.Domain.SqlDB.csproj", "{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

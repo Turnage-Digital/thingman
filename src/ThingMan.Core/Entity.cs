@@ -1,6 +1,6 @@
 using ThingMan.Core.Events;
 
-namespace ThingMan.Domain;
+namespace ThingMan.Core;
 
 public abstract class Entity
 {

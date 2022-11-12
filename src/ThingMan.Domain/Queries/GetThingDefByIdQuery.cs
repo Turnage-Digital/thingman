@@ -1,3 +1,5 @@
+using ThingMan.Core.Queries;
+
 namespace ThingMan.Domain.Queries;
 
 public class GetThingDefByIdQuery : Query
