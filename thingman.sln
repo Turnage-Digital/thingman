@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Domain.SqlDB", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.App", "src\ThingMan.App\ThingMan.App.csproj", "{83C7D661-45D5-43F7-AFA5-3624E3359BD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingMan.Identity.SqlDB", "src\ThingMan.Identity.SqlDB\ThingMan.Identity.SqlDB.csproj", "{F758F46E-4D98-4378-955F-4A1205037472}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,7 @@ Global
 		{43FF2275-14B4-4187-A513-3B5AD8646DC8} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{D0CC0048-9ED1-4234-B628-08A4AA8DA6AA} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 		{83C7D661-45D5-43F7-AFA5-3624E3359BD6} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
+		{F758F46E-4D98-4378-955F-4A1205037472} = {87367327-598A-4DD4-AFB6-C38BAB89D039}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7648DEB-F76A-4953-B7C4-50638B5FC642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -69,5 +72,9 @@ Global
 		{83C7D661-45D5-43F7-AFA5-3624E3359BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83C7D661-45D5-43F7-AFA5-3624E3359BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83C7D661-45D5-43F7-AFA5-3624E3359BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F758F46E-4D98-4378-955F-4A1205037472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F758F46E-4D98-4378-955F-4A1205037472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F758F46E-4D98-4378-955F-4A1205037472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F758F46E-4D98-4378-955F-4A1205037472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

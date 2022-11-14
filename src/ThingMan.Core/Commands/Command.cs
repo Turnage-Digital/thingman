@@ -4,7 +4,7 @@ namespace ThingMan.Core.Commands;
 
 public abstract class Command : ICommand
 {
-    [JsonProperty("TraceId")]
+    [JsonProperty("traceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();
 
     public override string ToString()

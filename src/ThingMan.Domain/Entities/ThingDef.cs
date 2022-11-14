@@ -19,7 +19,7 @@ public class ThingDef : Entity, IAggregateRoot
             UserId = userId,
             Props = props.ToList()
         };
-        retval.AddEvent(new ThingDefCreatedEvent(retval));
+        retval.AddEvent(new ThingDefCreatedEvent { ThingDef = retval});
         return retval;
     }
 }

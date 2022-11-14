@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ThingMan.Core.Events;
 
@@ -10,6 +11,8 @@ public abstract class Entity
     [NotMapped]
     public IEnumerable<IEvent>? Events => _events?.AsReadOnly();
 
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public string? Id { get; set; } = null;
 
     public void AddEvent(IEvent eventItem)

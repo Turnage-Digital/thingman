@@ -4,6 +4,8 @@ public class CoreResponse<T> : CoreResponse
 {
     public T? Result { get; init; }
 
+    public new static CoreResponse<T> Success { get; } = new() { Succeeded = true };
+
     public static CoreResponse<T> CreateSuccessfulResponseWithResult(T result)
     {
         var retval = new CoreResponse<T>

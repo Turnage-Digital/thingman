@@ -1,13 +1,10 @@
+using Newtonsoft.Json;
 using ThingMan.Core.Queries;
 
 namespace ThingMan.Domain.Queries;
 
 public class GetThingDefByIdQuery : Query
 {
-    public GetThingDefByIdQuery(string id)
-    {
-        Id = id;
-    }
-
-    public string Id { get; }
+    [JsonProperty("id")]
+    public string Id { get; set; } = null!;
 }

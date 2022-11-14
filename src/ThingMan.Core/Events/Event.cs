@@ -4,7 +4,7 @@ namespace ThingMan.Core.Events;
 
 public abstract class Event : IEvent
 {
-    [JsonProperty("TraceId")]
+    [JsonProperty("traceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();
 
     public override string ToString()

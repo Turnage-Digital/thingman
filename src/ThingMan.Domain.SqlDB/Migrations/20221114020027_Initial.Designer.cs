@@ -10,7 +10,7 @@ using ThingMan.Domain.SqlDB;
 namespace ThingMan.Domain.SqlDB.Migrations
 {
     [DbContext(typeof(ThingManDbContext))]
-    [Migration("20221112161309_Initial")]
+    [Migration("20221114020027_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -22,6 +22,7 @@ namespace ThingMan.Domain.SqlDB.Migrations
             modelBuilder.Entity("ThingMan.Domain.Entities.PropDef", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -45,6 +46,7 @@ namespace ThingMan.Domain.SqlDB.Migrations
             modelBuilder.Entity("ThingMan.Domain.Entities.ThingDef", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

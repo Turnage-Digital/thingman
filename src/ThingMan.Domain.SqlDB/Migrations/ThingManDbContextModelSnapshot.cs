@@ -19,6 +19,7 @@ namespace ThingMan.Domain.SqlDB.Migrations
             modelBuilder.Entity("ThingMan.Domain.Entities.PropDef", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -42,6 +43,7 @@ namespace ThingMan.Domain.SqlDB.Migrations
             modelBuilder.Entity("ThingMan.Domain.Entities.ThingDef", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

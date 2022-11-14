@@ -1,22 +1,54 @@
+using System.Security.Claims;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using ThingMan.Domain.Commands;
 using ThingMan.Domain.Commands.Handlers;
+using ThingMan.Domain.Dtos;
+using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace ThingMan.App;
 
 public static class ThingDefsApi
 {
-    public static IEndpointConventionBuilder Map(this IEndpointRouteBuilder endpoints)
+    public static IEndpointConventionBuilder MapThingDefsApi(this IEndpointRouteBuilder endpoints)
     {
         var retval = endpoints
             .MapGroup("/thing-defs")
             .RequireAuthorization();
 
-        retval.MapPost("/create", async (CreateThingDefCommand command, IHandleCreateThingDefCommand handler) =>
-        {
-            var id = 1;
+        retval.MapPost("/create", async (
+                CreateThingDefCommand command,
+                IHandleCreateThingDefCommand commandHandler,
+                IMapper mapper,
+                ClaimsPrincipal claimsPrincipal
+        ) =>
+            {
+                Log.Information(
+                    "/thing-def/create called:\n" +
+                    "command: {command}",
+                    command);
 
-            return Results.Ok(); //.Created($"/thing-defs/{id}");
-        });
+                var identity = (ClaimsIdentity)claimsPrincipal.Identity!;
+                command.UserId = identity.Claims.Single(claim => claim.Type == ClaimTypes.NameIdentifier).Value;
+                
+                var commandResult = await commandHandler.HandleAsync(command);
+                if (!commandResult.Succeeded)
+                {
+                    var message = commandResult.Errors
+                        .Aggregate($"Command: {command} - failed:", (m, coreError) => $"{m} {coreError.Message}");
+                    Log.Error("{message}", message);
+                    return Results.Problem("Failed to create ThingDef", statusCode: 500);
+                }
+
+                var result = commandResult.Result!;
+                var dto = mapper.Map<ThingDefDto>(result);
+                
+                return Results.Created($"/thing-defs/{dto.Id}", dto);
+            })
+            .Produces(Status401Unauthorized)
+            .Produces<ThingDefDto>(Status201Created)
+            .Produces<ProblemDetails>(Status500InternalServerError);
 
         return retval;
     }

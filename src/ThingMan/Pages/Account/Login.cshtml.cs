@@ -13,7 +13,10 @@ public class Login : PageModel
     private readonly SignInManager<IdentityUser> _signInManager;
     private readonly UserManager<IdentityUser> _userManager;
 
-    public Login(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+    public Login(
+        UserManager<IdentityUser> userManager,
+        SignInManager<IdentityUser> signInManager
+    )
     {
         _userManager = userManager;
         _signInManager = signInManager;
@@ -39,8 +42,7 @@ public class Login : PageModel
             return Page();
         }
 
-        // using that null suppressor because the model state is valid
-        var result = await _signInManager.PasswordSignInAsync(Input.Email!, Input.Password!,
+        var result = await _signInManager.PasswordSignInAsync(Input.Username!, Input.Password!,
             true, false);
         if (result.Succeeded)
         {
@@ -55,8 +57,7 @@ public class Login : PageModel
     public class InputModel
     {
         [Required]
-        [EmailAddress]
-        public string? Email { get; init; }
+        public string? Username { get; init; }
 
         [Required]
         [DataType(DataType.Password)]

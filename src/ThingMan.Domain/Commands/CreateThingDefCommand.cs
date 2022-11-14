@@ -1,20 +1,23 @@
+using Newtonsoft.Json;
 using ThingMan.Core.Commands;
-using ThingMan.Domain.Entities;
+using ThingMan.Domain.Dtos;
 
 namespace ThingMan.Domain.Commands;
 
 public class CreateThingDefCommand : Command
 {
-    public CreateThingDefCommand(string userId, string name, PropDef[] props)
+    public CreateThingDefCommand(string name, PropDefDto[] props)
     {
-        UserId = userId;
         Name = name;
         Props = props;
     }
 
-    public string UserId { get; }
+    [JsonIgnore]
+    public string? UserId { get; set; }
 
+    [JsonProperty("name")]
     public string Name { get; }
 
-    public PropDef[] Props { get; }
+    [JsonProperty("props")]
+    public PropDefDto[] Props { get; }
 }

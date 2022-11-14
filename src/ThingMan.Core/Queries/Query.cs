@@ -4,7 +4,7 @@ namespace ThingMan.Core.Queries;
 
 public abstract class Query : IQuery
 {
-    [JsonProperty("TraceId")]
+    [JsonProperty("traceId")]
     public Guid TraceId { get; set; } = Guid.NewGuid();
 
     public override string ToString()

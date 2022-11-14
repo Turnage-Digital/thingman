@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ThingMan;
+using ThingMan.Identity.SqlDB;
 
 #nullable disable
 
-namespace ThingMan.Migrations
+namespace ThingMan.Identity.SqlDB.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221112153304_Initial")]
+    [Migration("20221114015932_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
