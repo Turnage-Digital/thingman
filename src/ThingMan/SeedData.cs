@@ -1,8 +1,6 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Serilog;
-using ThingMan.Identity.SqlDB;
 
 namespace ThingMan;
 
@@ -90,4 +88,3 @@ public class SeedData
         public const string WebSite = "website";
     }
 }
-

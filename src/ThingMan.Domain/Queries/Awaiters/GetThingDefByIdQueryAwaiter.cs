@@ -1,10 +1,11 @@
 using ThingMan.Core;
+using ThingMan.Core.Queries;
 using ThingMan.Domain.Dtos;
 using ThingMan.Domain.Views;
 
 namespace ThingMan.Domain.Queries.Awaiters;
 
-public class GetThingDefByIdQueryAwaiter : IAwaitGetThingDefByIdQuery
+public class GetThingDefByIdQueryAwaiter : IAwaitQuery<GetThingDefByIdQuery, ThingDefDto>
 {
     private readonly IThingDefsView _thingDefsView;
 

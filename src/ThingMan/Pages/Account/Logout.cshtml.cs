@@ -18,7 +18,11 @@ public class Logout : PageModel
 
     public async Task<IActionResult> OnGet()
     {
-        await _signInManager.SignOutAsync();
+        if (User is { Identity.IsAuthenticated: true })
+        {
+            await _signInManager.SignOutAsync();
+        }
+
         return RedirectToPage();
     }
 }

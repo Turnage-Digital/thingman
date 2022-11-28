@@ -1,40 +1,29 @@
 using ThingMan.Core;
 using ThingMan.Core.Events;
+using ThingMan.Domain.Events;
 
 namespace ThingMan.Domain;
 
-public static class Dispatcher
+public class Dispatcher : IDispatcher
 {
-    private static IList<object>? _handlers;
+    private readonly IServiceProvider _serviceProvider;
 
-    public static void Register(object handler)
+    public Dispatcher(IServiceProvider serviceProvider)
     {
-        _handlers ??= new List<object>();
-        _handlers.Add(handler);
+        _serviceProvider = serviceProvider;
     }
 
-    public static async Task<CoreResponse> RaiseAsync<T>(T @event)
+    public async Task<CoreResponse> RaiseAsync<T>(T @event)
         where T : IEvent
     {
-        var retval = CoreResponse.Success;
-
-        if (_handlers == null)
-        {
-            return retval;
-        }
+        CoreResponse retval;
 
         try
         {
-            var handlers = _handlers.OfType<IHandleEvent<T>>();
-            var coreResults = await Task.WhenAll(
-                handlers.Select(he => he.HandleAsync(@event)));
-            var coreErrors = coreResults.Where(cr => cr.Succeeded == false)
-                .SelectMany(cr => cr.Errors);
-
-            if (coreErrors.Any())
-            {
-                retval = CoreResponse.CreateFailedResponse(coreErrors.ToArray());
-            }
+            var wrapper = (EventHandlerWrapper)Activator
+                .CreateInstance(typeof(EventHandlerWrapper<>)
+                    .MakeGenericType(@event.GetType()))!;
+            retval = await wrapper.Handle(@event, _serviceProvider);
         }
         catch (Exception e)
         {

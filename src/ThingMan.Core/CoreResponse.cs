@@ -2,7 +2,7 @@ namespace ThingMan.Core;
 
 public class CoreResponse<T> : CoreResponse
 {
-    public T? Result { get; init; }
+    public T? Result { get; private init; }
 
     public new static CoreResponse<T> Success { get; } = new() { Succeeded = true };
 

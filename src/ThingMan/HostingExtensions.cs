@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using ThingMan.App.Extensions;
-using ThingMan.Domain.SqlDB;
 using ThingMan.Domain.SqlDB.Extensions;
 using ThingMan.Identity.SqlDB;
 using ThingMan.Identity.SqlDB.Extensions;
@@ -15,21 +13,21 @@ internal static class HostingExtensions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
-
-        var domainAssemblyName = typeof(ThingManDbContext).Assembly.FullName!;
-        builder.Services.AddDomainSqlDB(connectionString, domainAssemblyName);
-        
-        var identityAssemblyName = typeof(ApplicationDbContext).Assembly.FullName!;
-        builder.Services.AddIdentitySqlDB(connectionString, identityAssemblyName);
+        builder.Services.AddDomainSqlDB(connectionString);
+        builder.Services.AddIdentitySqlDB(connectionString);
 
         builder.Services
             .AddDefaultIdentity<IdentityUser>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
-        builder.Services.ConfigureApplicationCookie(options => { options.LoginPath = "/Account/Login"; });
-        
-        builder.Services.AddAuthorization();
+        builder.Services
+            .ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+                options.LogoutPath = "/Account/Logout";
+            });
 
+        builder.Services.AddAuthorization();
         builder.Services.AddApp();
         builder.Services.AddRazorPages();
 

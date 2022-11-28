@@ -2,9 +2,11 @@ using System.Security.Claims;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using ThingMan.Core.Commands;
 using ThingMan.Domain.Commands;
 using ThingMan.Domain.Commands.Handlers;
 using ThingMan.Domain.Dtos;
+using ThingMan.Domain.Entities;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace ThingMan.App;
@@ -19,10 +21,10 @@ public static class ThingDefsApi
 
         retval.MapPost("/create", async (
                 CreateThingDefCommand command,
-                IHandleCreateThingDefCommand commandHandler,
+                IHandleCommand<CreateThingDefCommand, ThingDef> commandHandler,
                 IMapper mapper,
                 ClaimsPrincipal claimsPrincipal
-        ) =>
+            ) =>
             {
                 Log.Information(
                     "/thing-def/create called:\n" +
@@ -31,7 +33,7 @@ public static class ThingDefsApi
 
                 var identity = (ClaimsIdentity)claimsPrincipal.Identity!;
                 command.UserId = identity.Claims.Single(claim => claim.Type == ClaimTypes.NameIdentifier).Value;
-                
+
                 var commandResult = await commandHandler.HandleAsync(command);
                 if (!commandResult.Succeeded)
                 {
@@ -43,7 +45,7 @@ public static class ThingDefsApi
 
                 var result = commandResult.Result!;
                 var dto = mapper.Map<ThingDefDto>(result);
-                
+
                 return Results.Created($"/thing-defs/{dto.Id}", dto);
             })
             .Produces(Status401Unauthorized)

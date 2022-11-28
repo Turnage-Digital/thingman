@@ -29,7 +29,7 @@ try
         SeedData.EnsureSeedData(app);
         Log.Information("Done seeding database. Exiting.");
     }
-    
+
     app.Run();
 }
 catch (Exception ex) when

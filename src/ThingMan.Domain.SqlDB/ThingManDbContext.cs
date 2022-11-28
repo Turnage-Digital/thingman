@@ -7,10 +7,13 @@ namespace ThingMan.Domain.SqlDB;
 
 public class ThingManDbContext : DbContext
 {
-    public ThingManDbContext() { }
+    private readonly IDispatcher _dispatcher;
 
-    public ThingManDbContext(DbContextOptions<ThingManDbContext> options)
-        : base(options) { }
+    public ThingManDbContext(DbContextOptions<ThingManDbContext> options, IDispatcher dispatcher)
+        : base(options)
+    {
+        _dispatcher = dispatcher;
+    }
 
     public virtual DbSet<ThingDef> ThingDefs { get; set; } = null!;
 
@@ -29,7 +32,8 @@ public class ThingManDbContext : DbContext
             .ToList();
 
         var events = entities
-            .SelectMany(entry => entry.Entity.Events!);
+            .SelectMany(entry => entry.Entity.Events!)
+            .ToList();
 
         foreach (var entity in entities)
         {
@@ -38,7 +42,7 @@ public class ThingManDbContext : DbContext
 
         foreach (var @event in events)
         {
-            var result = await Dispatcher.RaiseAsync(@event);
+            var result = await _dispatcher.RaiseAsync(@event);
             if (!result.Succeeded)
             {
                 var message = result.Errors

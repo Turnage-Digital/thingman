@@ -7,10 +7,11 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddIdentitySqlDB(
         this IServiceCollection services,
-        string connectionString,
-        string migrationAssemblyName
+        string connectionString
     )
     {
+        var migrationAssemblyName = typeof(ApplicationDbContext).Assembly.FullName!;
+
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlite(connectionString, optionsBuilder =>
                 optionsBuilder.MigrationsAssembly(migrationAssemblyName)));
