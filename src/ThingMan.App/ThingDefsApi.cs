@@ -26,10 +26,7 @@ public static class ThingDefsApi
                 ClaimsPrincipal claimsPrincipal
             ) =>
             {
-                Log.Information(
-                    "/thing-def/create called:\n" +
-                    "command: {command}",
-                    command);
+                Log.Information("/thing-def/create called: {TraceId} {Command}", command.TraceId, command);
 
                 var identity = (ClaimsIdentity)claimsPrincipal.Identity!;
                 command.UserId = identity.Claims.Single(claim => claim.Type == ClaimTypes.NameIdentifier).Value;
