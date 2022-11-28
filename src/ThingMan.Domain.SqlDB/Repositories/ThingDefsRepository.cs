@@ -4,7 +4,7 @@ using ThingMan.Domain.Repositories;
 
 namespace ThingMan.Domain.SqlDB.Repositories;
 
-public class ThingDefsRepository : IThingDefsRepository
+internal class ThingDefsRepository : IThingDefsRepository
 {
     private readonly ThingManDbContext _dbContext;
 

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using ThingMan.App.Extensions;
+using ThingMan.Domain.Extensions;
 using ThingMan.Domain.SqlDB.Extensions;
 using ThingMan.Identity.SqlDB;
 using ThingMan.Identity.SqlDB.Extensions;
@@ -27,8 +28,9 @@ internal static class HostingExtensions
                 options.LogoutPath = "/Account/Logout";
             });
 
+        builder.Services.AddDomain();
+        
         builder.Services.AddAuthorization();
-        builder.Services.AddApp();
         builder.Services.AddRazorPages();
 
         if (builder.Environment.IsDevelopment())

@@ -5,7 +5,7 @@ using ThingMan.Domain.Views;
 
 namespace ThingMan.Domain.SqlDB.Views;
 
-public class ThingDefsView : IThingDefsView
+internal class ThingDefsView : IThingDefsView
 {
     private readonly IMapper _mapper;
     private readonly IThingDefsRepository _thingDefsRepository;

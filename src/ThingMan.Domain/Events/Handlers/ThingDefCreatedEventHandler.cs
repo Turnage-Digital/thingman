@@ -3,7 +3,7 @@ using ThingMan.Core.Events;
 
 namespace ThingMan.Domain.Events.Handlers;
 
-public class ThingDefCreatedEventHandler : IHandleEvent<ThingDefCreatedEvent>
+internal class ThingDefCreatedEventHandler : IHandleEvent<ThingDefCreatedEvent>
 {
     public Task<CoreResponse> HandleAsync(ThingDefCreatedEvent @event)
     {

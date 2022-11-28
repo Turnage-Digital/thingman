@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using ThingMan.Core;
 using ThingMan.Domain.Entities;
+using ThingMan.Domain.Events;
 
 namespace ThingMan.Domain.SqlDB;
 

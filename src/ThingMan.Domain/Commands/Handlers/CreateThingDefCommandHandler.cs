@@ -6,7 +6,7 @@ using ThingMan.Domain.Repositories;
 
 namespace ThingMan.Domain.Commands.Handlers;
 
-public class CreateThingDefCommandHandler : IHandleCommand<CreateThingDefCommand, ThingDef>
+internal class CreateThingDefCommandHandler : IHandleCommand<CreateThingDefCommand, ThingDef>
 {
     private readonly IMapper _mapper;
     private readonly IThingDefsRepository _thingDefsRepository;

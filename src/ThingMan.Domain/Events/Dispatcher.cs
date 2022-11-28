@@ -1,10 +1,15 @@
 using ThingMan.Core;
 using ThingMan.Core.Events;
-using ThingMan.Domain.Events;
 
-namespace ThingMan.Domain;
+namespace ThingMan.Domain.Events;
 
-public class Dispatcher : IDispatcher
+public interface IDispatcher
+{
+    Task<CoreResponse> RaiseAsync<T>(T @event)
+        where T : IEvent;
+}
+
+internal class Dispatcher : IDispatcher
 {
     private readonly IServiceProvider _serviceProvider;
 

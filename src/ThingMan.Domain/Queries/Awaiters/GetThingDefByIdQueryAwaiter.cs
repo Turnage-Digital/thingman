@@ -5,7 +5,7 @@ using ThingMan.Domain.Views;
 
 namespace ThingMan.Domain.Queries.Awaiters;
 
-public class GetThingDefByIdQueryAwaiter : IAwaitQuery<GetThingDefByIdQuery, ThingDefDto>
+internal class GetThingDefByIdQueryAwaiter : IAwaitQuery<GetThingDefByIdQuery, ThingDefDto>
 {
     private readonly IThingDefsView _thingDefsView;
 

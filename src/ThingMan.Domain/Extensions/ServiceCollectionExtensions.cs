@@ -1,7 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
 using ThingMan.Core.Commands;
 using ThingMan.Core.Events;
 using ThingMan.Core.Queries;
-using ThingMan.Domain;
 using ThingMan.Domain.Commands;
 using ThingMan.Domain.Commands.Handlers;
 using ThingMan.Domain.Configuration;
@@ -12,11 +12,11 @@ using ThingMan.Domain.Events.Handlers;
 using ThingMan.Domain.Queries;
 using ThingMan.Domain.Queries.Awaiters;
 
-namespace ThingMan.App.Extensions;
+namespace ThingMan.Domain.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddApp(this IServiceCollection services)
+    public static IServiceCollection AddDomain(this IServiceCollection services)
     {
         services.AddAutoMapper(config => { config.AddProfile<DomainMappingProfile>(); });
         services.AddScoped<IDispatcher, Dispatcher>();
