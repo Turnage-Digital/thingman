@@ -11,7 +11,7 @@ public class CreateThingDefCommand : Command
         Name = name;
         Props = props;
     }
-
+    
     [JsonIgnore]
     public string? UserId { get; set; }
 

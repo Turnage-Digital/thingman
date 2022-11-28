@@ -29,7 +29,7 @@ public class CreateThingDefCommandHandler : IHandleCommand<CreateThingDefCommand
         try
         {
             var props = _mapper.Map<PropDef[]>(command.Props);
-            var thingDef = ThingDef.Create(command.Name, command.UserId, props);
+            var thingDef = ThingDef.Create(command.Name, command.UserId!, props);
             await _thingDefsRepository.CreateAsync(thingDef);
             retval = CoreResponse<ThingDef>.CreateSuccessfulResponseWithResult(thingDef);
         }
