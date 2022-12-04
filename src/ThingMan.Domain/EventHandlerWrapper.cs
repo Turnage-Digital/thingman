@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ThingMan.Core;
 using ThingMan.Core.Events;
 
-namespace ThingMan.Domain.Events;
+namespace ThingMan.Domain;
 
 public abstract class EventHandlerWrapper
 {

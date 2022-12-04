@@ -1,4 +1,4 @@
-namespace ThingMan.Domain.Dtos;
+namespace ThingMan.Domain.Aggregates.ThingDefs.Dtos;
 
 public record PropDefDto
 {

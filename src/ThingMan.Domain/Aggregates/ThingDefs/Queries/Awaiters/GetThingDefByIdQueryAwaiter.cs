@@ -1,9 +1,8 @@
 using ThingMan.Core;
 using ThingMan.Core.Queries;
-using ThingMan.Domain.Dtos;
-using ThingMan.Domain.Views;
+using ThingMan.Domain.Aggregates.ThingDefs.Dtos;
 
-namespace ThingMan.Domain.Queries.Awaiters;
+namespace ThingMan.Domain.Aggregates.ThingDefs.Queries.Awaiters;
 
 internal class GetThingDefByIdQueryAwaiter : IAwaitQuery<GetThingDefByIdQuery, ThingDefDto>
 {

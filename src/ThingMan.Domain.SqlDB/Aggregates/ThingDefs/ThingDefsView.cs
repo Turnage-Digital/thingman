@@ -1,9 +1,8 @@
 using AutoMapper;
-using ThingMan.Domain.Dtos;
-using ThingMan.Domain.Repositories;
-using ThingMan.Domain.Views;
+using ThingMan.Domain.Aggregates.ThingDefs;
+using ThingMan.Domain.Aggregates.ThingDefs.Dtos;
 
-namespace ThingMan.Domain.SqlDB.Views;
+namespace ThingMan.Domain.SqlDB.Aggregates.ThingDefs;
 
 internal class ThingDefsView : IThingDefsView
 {

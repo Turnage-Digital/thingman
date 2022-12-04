@@ -3,10 +3,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using ThingMan.Core.Commands;
-using ThingMan.Domain.Commands;
-using ThingMan.Domain.Commands.Handlers;
-using ThingMan.Domain.Dtos;
-using ThingMan.Domain.Entities;
+using ThingMan.Domain.Aggregates.ThingDefs;
+using ThingMan.Domain.Aggregates.ThingDefs.Commands;
+using ThingMan.Domain.Aggregates.ThingDefs.Dtos;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace ThingMan.App;

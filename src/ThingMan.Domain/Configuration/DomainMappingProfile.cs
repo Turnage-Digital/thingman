@@ -1,6 +1,6 @@
 using AutoMapper;
-using ThingMan.Domain.Dtos;
-using ThingMan.Domain.Entities;
+using ThingMan.Domain.Aggregates.ThingDefs;
+using ThingMan.Domain.Aggregates.ThingDefs.Dtos;
 
 namespace ThingMan.Domain.Configuration;
 

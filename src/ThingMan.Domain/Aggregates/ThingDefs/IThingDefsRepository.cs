@@ -1,7 +1,6 @@
 using ThingMan.Core;
-using ThingMan.Domain.Entities;
 
-namespace ThingMan.Domain.Repositories;
+namespace ThingMan.Domain.Aggregates.ThingDefs;
 
 public interface IThingDefsRepository :
     IRead<ThingDef>, ICreate<ThingDef> { }

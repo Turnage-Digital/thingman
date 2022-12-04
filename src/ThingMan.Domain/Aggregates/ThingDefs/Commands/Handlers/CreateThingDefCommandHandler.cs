@@ -1,10 +1,8 @@
 using AutoMapper;
 using ThingMan.Core;
 using ThingMan.Core.Commands;
-using ThingMan.Domain.Entities;
-using ThingMan.Domain.Repositories;
 
-namespace ThingMan.Domain.Commands.Handlers;
+namespace ThingMan.Domain.Aggregates.ThingDefs.Commands.Handlers;
 
 internal class CreateThingDefCommandHandler : IHandleCommand<CreateThingDefCommand, ThingDef>
 {

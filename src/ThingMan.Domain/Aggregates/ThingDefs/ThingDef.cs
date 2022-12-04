@@ -1,7 +1,7 @@
 using ThingMan.Core;
-using ThingMan.Domain.Events;
+using ThingMan.Domain.Aggregates.ThingDefs.Events;
 
-namespace ThingMan.Domain.Entities;
+namespace ThingMan.Domain.Aggregates.ThingDefs;
 
 public class ThingDef : Entity, IAggregateRoot
 {

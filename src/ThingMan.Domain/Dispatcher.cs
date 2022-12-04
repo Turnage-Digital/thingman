@@ -1,7 +1,7 @@
 using ThingMan.Core;
 using ThingMan.Core.Events;
 
-namespace ThingMan.Domain.Events;
+namespace ThingMan.Domain;
 
 public interface IDispatcher
 {

@@ -1,9 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ThingMan.Domain.Repositories;
-using ThingMan.Domain.SqlDB.Repositories;
-using ThingMan.Domain.SqlDB.Views;
-using ThingMan.Domain.Views;
+using ThingMan.Domain.Aggregates.ThingDefs;
+using ThingMan.Domain.SqlDB.Aggregates.ThingDefs;
 
 namespace ThingMan.Domain.SqlDB.Extensions;
 

@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using ThingMan.Domain.Entities;
-using ThingMan.Domain.Repositories;
+using ThingMan.Domain.Aggregates.ThingDefs;
 
-namespace ThingMan.Domain.SqlDB.Repositories;
+namespace ThingMan.Domain.SqlDB.Aggregates.ThingDefs;
 
 internal class ThingDefsRepository : IThingDefsRepository
 {

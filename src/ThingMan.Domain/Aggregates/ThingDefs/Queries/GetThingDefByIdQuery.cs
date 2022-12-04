@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using ThingMan.Core.Queries;
 
-namespace ThingMan.Domain.Queries;
+namespace ThingMan.Domain.Aggregates.ThingDefs.Queries;
 
 public class GetThingDefByIdQuery : Query
 {

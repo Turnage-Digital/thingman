@@ -2,15 +2,15 @@ using Microsoft.Extensions.DependencyInjection;
 using ThingMan.Core.Commands;
 using ThingMan.Core.Events;
 using ThingMan.Core.Queries;
-using ThingMan.Domain.Commands;
-using ThingMan.Domain.Commands.Handlers;
+using ThingMan.Domain.Aggregates.ThingDefs;
+using ThingMan.Domain.Aggregates.ThingDefs.Commands;
+using ThingMan.Domain.Aggregates.ThingDefs.Commands.Handlers;
+using ThingMan.Domain.Aggregates.ThingDefs.Dtos;
+using ThingMan.Domain.Aggregates.ThingDefs.Events;
+using ThingMan.Domain.Aggregates.ThingDefs.Events.Handlers;
+using ThingMan.Domain.Aggregates.ThingDefs.Queries;
+using ThingMan.Domain.Aggregates.ThingDefs.Queries.Awaiters;
 using ThingMan.Domain.Configuration;
-using ThingMan.Domain.Dtos;
-using ThingMan.Domain.Entities;
-using ThingMan.Domain.Events;
-using ThingMan.Domain.Events.Handlers;
-using ThingMan.Domain.Queries;
-using ThingMan.Domain.Queries.Awaiters;
 
 namespace ThingMan.Domain.Extensions;
 
