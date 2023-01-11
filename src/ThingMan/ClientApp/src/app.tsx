@@ -1,7 +1,8 @@
 import React from "react";
 
 function App() {
-    return <div className="md-24 bg-gray-50 "/>;
+  const helloWorld = "Hello World!";
+  return <div className="md-24 bg-gray-50 ">{helloWorld}</div>;
 }
 
 export default App;

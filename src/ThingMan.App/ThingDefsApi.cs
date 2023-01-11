@@ -46,7 +46,8 @@ public static class ThingDefsApi
             })
             .Produces(Status401Unauthorized)
             .Produces<ThingDefDto>(Status201Created)
-            .Produces<ProblemDetails>(Status500InternalServerError);
+            .Produces<ProblemDetails>(Status500InternalServerError)
+            .WithTags("ThingDefs");
 
         return retval;
     }

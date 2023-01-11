@@ -9,7 +9,9 @@ public record PropDef
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public string? Id { get; set; } = null;
     
+    [Required]
     public string Name { get; set; } = null!;
-    
-    public string PropType { get; set; } = null!;
+
+    [Required]
+    public PropType Type { get; set; }
 }

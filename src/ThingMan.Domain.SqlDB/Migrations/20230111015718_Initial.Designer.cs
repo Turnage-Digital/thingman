@@ -10,7 +10,7 @@ using ThingMan.Domain.SqlDB;
 namespace ThingMan.Domain.SqlDB.Migrations
 {
     [DbContext(typeof(ThingManDbContext))]
-    [Migration("20221114020027_Initial")]
+    [Migration("20230111015718_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace ThingMan.Domain.SqlDB.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
 
-            modelBuilder.Entity("ThingMan.Domain.Entities.PropDef", b =>
+            modelBuilder.Entity("ThingMan.Domain.Aggregates.ThingDefs.PropDef", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,21 +29,15 @@ namespace ThingMan.Domain.SqlDB.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PropType")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ThingDefId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Type")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ThingDefId");
 
                     b.ToTable("PropDef");
                 });
 
-            modelBuilder.Entity("ThingMan.Domain.Entities.ThingDef", b =>
+            modelBuilder.Entity("ThingMan.Domain.Aggregates.ThingDefs.ThingDef", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,6 +45,15 @@ namespace ThingMan.Domain.SqlDB.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PropDef1Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PropDef2Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PropDef3Id")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserId")
@@ -59,19 +62,34 @@ namespace ThingMan.Domain.SqlDB.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PropDef1Id");
+
+                    b.HasIndex("PropDef2Id");
+
+                    b.HasIndex("PropDef3Id");
+
                     b.ToTable("ThingDefs");
                 });
 
-            modelBuilder.Entity("ThingMan.Domain.Entities.PropDef", b =>
+            modelBuilder.Entity("ThingMan.Domain.Aggregates.ThingDefs.ThingDef", b =>
                 {
-                    b.HasOne("ThingMan.Domain.Entities.ThingDef", null)
-                        .WithMany("Props")
-                        .HasForeignKey("ThingDefId");
-                });
+                    b.HasOne("ThingMan.Domain.Aggregates.ThingDefs.PropDef", "PropDef1")
+                        .WithMany()
+                        .HasForeignKey("PropDef1Id");
 
-            modelBuilder.Entity("ThingMan.Domain.Entities.ThingDef", b =>
-                {
-                    b.Navigation("Props");
+                    b.HasOne("ThingMan.Domain.Aggregates.ThingDefs.PropDef", "PropDef2")
+                        .WithMany()
+                        .HasForeignKey("PropDef2Id");
+
+                    b.HasOne("ThingMan.Domain.Aggregates.ThingDefs.PropDef", "PropDef3")
+                        .WithMany()
+                        .HasForeignKey("PropDef3Id");
+
+                    b.Navigation("PropDef1");
+
+                    b.Navigation("PropDef2");
+
+                    b.Navigation("PropDef3");
                 });
 #pragma warning restore 612, 618
         }

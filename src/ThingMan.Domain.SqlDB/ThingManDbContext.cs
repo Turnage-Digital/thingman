@@ -9,6 +9,8 @@ public class ThingManDbContext : DbContext
 {
     private readonly IDispatcher _dispatcher;
 
+    public ThingManDbContext() { }
+
     public ThingManDbContext(DbContextOptions<ThingManDbContext> options, IDispatcher dispatcher)
         : base(options)
     {

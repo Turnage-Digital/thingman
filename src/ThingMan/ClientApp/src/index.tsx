@@ -1,5 +1,6 @@
 import React from "react";
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
+
 // import { Provider } from "react-redux";
 import App from "./app";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
@@ -10,9 +11,9 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement!);
 
 root.render(
-    // <Provider store={store}>
-    <App/>
-    // </Provider>
+  // <Provider store={store}>
+  <App />
+  // </Provider>
 );
 
 serviceWorkerRegistration.register();
